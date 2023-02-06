@@ -1,38 +1,457 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
+body {
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Nanum Pen Script";
+  min-height: 100vh;
+  margin: 0px;
+
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* media query */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (min-width: 486px) {
+  .App {
+    width: 476px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
+@media (max-width: 486px) {
+  .App {
+    width: 90vw;
+  }
+}
+
+#root {
+  background-color: #b79e84;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.App {
   min-height: 100vh;
+}
+
+/* MyHeader Style */
+
+header {
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid gray;
+}
+
+header > div {
+  display: flex;
+}
+
+header .head_text {
+  width: 50%;
+  font-size: 25px;
+  justify-content: center;
+}
+
+header .head_icon_left {
+  display: flex;
+  width: 25%;
+  justify-content: flex-start;
+}
+
+header .head_icon_right {
+  display: flex;
+  width: 25%;
+  justify-content: flex-end;
+}
+
+a {
+  font-size: 20px;
+}
+
+.home_icon {
+  text-decoration: none;
+}
+
+/* API Wrapper */
+
+.APILogin {
+  background-color: #665645;
+  padding: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  min-height: 100vh;
+}
+
+.api_btn_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+
+.APIButton {
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  width: 100%;
+
+  background-color: #ffffff;
+  color: black;
+
+  padding: 8px 0px;
+  margin: 8px;
+
+  font-size: 13px;
+  font-family: "Inter";
+  font-weight: 400;
+
+  white-space: nowrap;
+}
+
+.APILogin .btn_wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.APILogin .login_img_wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+  margin-bottom: 20px;
+
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* EmailLogin */
+
+.EmailLogin .login_img_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 50px;
+
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login_wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.forget {
+  cursor: pointer;
+  border: none;
+  background-color: #b79e84;
+  color: white;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  margin: 10px;
+}
+
+/* MyButton */
+
+.MyButton {
+  cursor: pointer;
+  border: none;
+  border-radius: 15px;
+  width: 100%;
+
+  background-color: #2e2a27;
+  box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+
+  padding: 10px 20px;
+  margin: 10px 5px;
+
+  font-size: 25px;
+  font-family: "Inter";
+  font-weight: 200;
+
+  white-space: nowrap;
+}
+
+/* EmailLogin */
+
+.EmailLogin {
+  padding: 50px;
+  background-color: #b79e84;
+}
+
+/* Question Page */
+.Question {
+  background-color: #f5f3f2;
+  padding: 10px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  min-height: 100vh;
+
+  margin-left: 20px;
+}
+
+/* MyCheck */
+
+.container {
+  display: flex;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+/* Hide the default radio button */
+.container input {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.check {
+  border: 1px solid #665645;
+  border-radius: 50%;
+  margin: 0px 10px;
+  margin-top: auto;
+}
+
+/* check Every */
+.checkEvery {
+  height: 50px;
+  width: 50px;
+}
+
+.container input:checked ~ .checkEvery {
+  background-color: #665645;
+  background-image: url("../public/assets/check_icon.png");
+  background-repeat: no-repeat;
+  background-position-x: 5px;
+  background-position-y: 5px;
+  background-size: 40px;
+}
+
+/* check Almost */
+
+.checkAlmost {
+  height: 35px;
+  width: 35px;
+}
+
+.container input:checked ~ .checkAlmost {
+  background-color: #665645;
+  background-image: url("../public/assets/check_icon.png");
+  background-repeat: no-repeat;
+  background-position-x: 3px;
+  background-position-y: 3px;
+  background-size: 30px;
+}
+
+/* check Sometimes */
+
+.checkSometimes {
+  height: 25px;
+  width: 25px;
+}
+
+.container input:checked ~ .checkSometimes {
+  background-color: #665645;
+  background-image: url("../public/assets/check_icon.png");
+  background-repeat: no-repeat;
+  background-position-x: 3px;
+  background-position-y: 3px;
+  background-size: 20px;
+}
+
+.container:hover input ~ .check {
+  background-color: #665645;
+}
+
+input#checkEvery {
+  display: none;
+}
+
+input#checkAlmost {
+  display: none;
+}
+input#checkSometimes {
+  display: none;
+}
+
+/* MyQuestion */
+
+.MyQuestion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #665645;
+  margin-top: 30px;
+}
+
+.MyQuestion .CheckList {
+  display: flex;
+}
+
+.MyQuestion .label_for_check {
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+
+.MyQuestion .label_for_check .left_child {
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+  margin: 0px;
+}
+
+.MyQuestion .label_for_check .right_child {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  margin: 0px;
+}
+
+.MyQuestion .text_wrapper {
+  text-align: center;
+  margin: 0px;
+  width: 71.6px;
+}
+
+.arrow_btn_text {
+  color: white;
+  display: flex;
+}
+
+.arrow_btn_text .btn_text_left {
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+}
+
+.arrow_btn_text .btn_text_right {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  align-items: center;
+}
+
+/* MyInput */
+.MyInput {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+
+  margin-left: 10px;
+  margin-right: 10px;
+
+  padding: 10px 15px;
+  background-color: #efe7e0;
+  font-weight: bold;
+}
+
+.DogInfo .input_wrapper {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start;
+  height: 60vh;
+}
+
+.input_box {
+  display: flex;
+  padding-top: 8px;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+.input_title {
+  width: 100%;
+  padding-left: 20px;
+  color: #766b63;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* DogInfo */
+
+.DogInfo {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+  padding: 0px 25px;
+
+  min-height: 100vh;
+}
+
+.DogInfo .header_wrapper {
+  margin-bottom: 60px;
+}
+
+.weight_box {
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+}
+
+.weight_text {
+  margin-top: auto;
+  color: #5d524a;
+  font-weight: 300;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.DogInfo .btn_wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 200px;
+}
+
+.DogInfo .text_center > input {
+  text-align: center;
+}
+
+.DogInfo .MyHeader + .input_box {
+  margin-top: 50px;
+}
+
+/* page animation */
+
+.fade-enter {
+  opacity: 1;
+  transform: translateY(-70%);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0%);
+  transition: all 2s ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+  /* transform: translateY(0%); */
+}
+
+.fade-exit-active {
+  opacity: 1;
+  transform: translateY(0%);
+  transition: all 1s;
 }
