@@ -1,16 +1,16 @@
 import MyCheck from "./MyCheck";
 
-const MyQuestion = ({ text, num }) => {
+const MyQuestion = ({ text, num, focus }) => {
   return (
-    <div className="MyQuestion">
+    <div className="MyQuestion" id={`${num}`}>
       <h2>{text}</h2>
       <div className="CheckList">
-        <MyCheck num={num} type={"Every"} />
-        <MyCheck num={num} type={"Almost"} />
-        <MyCheck num={num} type={"Sometimes"} />
-        <MyCheck num={num} type={"Sometimes"} />
-        <MyCheck num={num} type={"Almost"} />
-        <MyCheck num={num} type={"Every"} />
+        <MyCheck num={num} type={"Every"} value={-3} />
+        <MyCheck num={num} type={"Almost"} value={-2} />
+        <MyCheck num={num} type={"Sometimes"} value={-1} />
+        <MyCheck num={num} type={"Sometimes"} value={1} />
+        <MyCheck num={num} type={"Almost"} value={2} />
+        <MyCheck num={num} type={"Every"} value={3} />
       </div>
       <div className="label_for_check">
         <div className="left_child">

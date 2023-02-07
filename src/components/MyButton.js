@@ -1,16 +1,21 @@
 const MyButton = ({ type, text, onClick }) => {
-  const btn_type = ["brown ", "beige", "circle", "arrow"].includes(type)
-    ? type
-    : "default";
+  const btn_type = type;
 
   const text1 = () => {
     if (type === "arrow") {
       return (
-        <div className="arrow_btn_text">
+        <div className="arrow_btn">
           <div className="btn_text_left">{text}</div>
           <span className="material-symbols-outlined btn_text_right">
             arrow_forward_ios
           </span>
+        </div>
+      );
+    } else if (type === "arrow_next") {
+      return (
+        <div className="arrow_btn">
+          <div className="btn_text_center">다음</div>
+          <span className="material-symbols-outlined icon_center">east</span>
         </div>
       );
     } else {

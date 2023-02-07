@@ -41,14 +41,14 @@ const DogInfo = () => {
               <MyInput type="number" name="일" />
             </div>
             <div className="input_title">성별</div>
-            <div className="input_box text_center">
-              <MyInput type="radio" name="남아" />
-              <MyInput type="radio" name="여아" />
+            <div className="input_box text_center radio_box">
+              <MyInput type="radio" name="성별" value="Man" text="남아" />
+              <MyInput type="radio" name="성별" value="Woman" text="여아" />
             </div>
             <div className="input_title">중성화 수술 여부</div>
-            <div className="input_box text_center">
-              <MyInput type="radio" name="유" />
-              <MyInput type="radio" name="무" />
+            <div className="input_box text_center radio_box">
+              <MyInput type="radio" name="중성화" value="True" text="유" />
+              <MyInput type="radio" name="중성화" value="False" text="무" />
             </div>
             <div className="input_title">몸무게</div>
             <div className="input_box">
