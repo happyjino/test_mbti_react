@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 
-const MyCheck = ({ type, num, value }) => {
+const MyCheck = ({ type, num, value, percentIncrease }) => {
   useEffect(() => {
     if (num === 0) {
-      const firstElement = document.getElementsByName("question0");
-      const firstQuestion = document.getElementById(`q${num}`);
-      firstQuestion.style.opacity = 1;
-      firstElement.forEach((it) => it.removeAttribute("disabled"));
+      // firstElement Control
+      document.getElementById(`q0`).style.opacity = 1;
+      document
+        .getElementsByName("question0")
+        .forEach((it) => it.removeAttribute("disabled"));
     }
   }, []);
 
@@ -14,6 +15,10 @@ const MyCheck = ({ type, num, value }) => {
     const nextQuestion = document.getElementById(`q${num + 1}`);
     const question = document.getElementById(`q${num}`);
     const nextElement = document.getElementsByName(`question${num + 1}`);
+
+    if (question.style.opacity === "1") {
+      percentIncrease(num);
+    }
 
     if (nextQuestion && question.style.opacity === "1") {
       nextQuestion.scrollIntoView({ behavior: "smooth", block: "center" });

@@ -1,16 +1,46 @@
 import MyCheck from "./MyCheck";
 
-const MyQuestion = ({ text, num, focus }) => {
+const MyQuestion = ({ text, num, percentIncrease }) => {
   return (
     <div className={`MyQuestion`} id={`q${num}`}>
       <h2>{text}</h2>
       <div className="CheckList">
-        <MyCheck num={num} type={"Every"} value={-3} />
-        <MyCheck num={num} type={"Almost"} value={-2} />
-        <MyCheck num={num} type={"Sometimes"} value={-1} />
-        <MyCheck num={num} type={"Sometimes"} value={1} />
-        <MyCheck num={num} type={"Almost"} value={2} />
-        <MyCheck num={num} type={"Every"} value={3} />
+        <MyCheck
+          num={num}
+          type={"Every"}
+          value={-3}
+          percentIncrease={percentIncrease}
+        />
+        <MyCheck
+          num={num}
+          type={"Almost"}
+          value={-2}
+          percentIncrease={percentIncrease}
+        />
+        <MyCheck
+          num={num}
+          type={"Sometimes"}
+          value={-1}
+          percentIncrease={percentIncrease}
+        />
+        <MyCheck
+          num={num}
+          type={"Sometimes"}
+          value={1}
+          percentIncrease={percentIncrease}
+        />
+        <MyCheck
+          num={num}
+          type={"Almost"}
+          value={2}
+          percentIncrease={percentIncrease}
+        />
+        <MyCheck
+          num={num}
+          type={"Every"}
+          value={3}
+          percentIncrease={percentIncrease}
+        />
       </div>
       <div className="label_for_check">
         <div className="left_child">
