@@ -1,0 +1,21 @@
+/* MyButton */
+
+.MyButton {
+  cursor: pointer;
+  border: none;
+  border-radius: 15px;
+  width: 100%;
+
+  background-color: #2e2a27;
+  box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+
+  padding: 10px 20px;
+  margin: 10px 5px;
+
+  font-size: 25px;
+  font-family: "Inter";
+  font-weight: 200;
+
+  white-space: nowrap;
+}

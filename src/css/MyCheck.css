@@ -1,0 +1,77 @@
+/* MyCheck */
+
+.Question .container {
+  display: flex;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+/* Hide the default radio button */
+.container input {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.check {
+  border: 1px solid #665645;
+  border-radius: 50%;
+  margin: 0px 10px;
+  margin-top: auto;
+}
+
+/* check Every */
+
+.Every {
+  height: 50px;
+  width: 50px;
+}
+
+.Almost {
+  height: 35px;
+  width: 35px;
+}
+
+.Sometimes {
+  height: 25px;
+  width: 25px;
+}
+
+.container input:checked ~ .check {
+  background-color: #665645;
+  background-image: url("../../public/assets/check_icon.png");
+  background-repeat: no-repeat;
+}
+
+.container input:checked ~ .Every {
+  background-position-x: 5px;
+  background-position-y: 5px;
+  background-size: 40px;
+}
+
+.container input:checked ~ .Almost {
+  background-position-x: 3px;
+  background-position-y: 3px;
+  background-size: 30px;
+}
+
+.container input:checked ~ .Sometimes {
+  background-position-x: 3px;
+  background-position-y: 3px;
+  background-size: 20px;
+}
+
+.container:hover input:enabled ~ .check {
+  background-color: #665645;
+}
+
+input.checkEvery {
+  display: none;
+}
+
+input.checkAlmost {
+  display: none;
+}
+input.checkSometimes {
+  display: none;
+}

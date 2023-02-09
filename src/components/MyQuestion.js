@@ -2,7 +2,7 @@ import MyCheck from "./MyCheck";
 
 const MyQuestion = ({ text, num, focus }) => {
   return (
-    <div className="MyQuestion" id={`${num}`}>
+    <div className={`MyQuestion`} id={`q${num}`}>
       <h2>{text}</h2>
       <div className="CheckList">
         <MyCheck num={num} type={"Every"} value={-3} />

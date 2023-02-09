@@ -1,0 +1,53 @@
+/* API Wrapper */
+
+.APILogin {
+  background-color: #665645;
+  padding: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  min-height: 100vh;
+}
+
+.api_btn_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+
+.APIButton {
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  width: 100%;
+
+  background-color: #ffffff;
+  color: black;
+
+  padding: 8px 0px;
+  margin: 8px;
+
+  font-size: 13px;
+  font-family: "Inter";
+  font-weight: 400;
+
+  white-space: nowrap;
+}
+
+.APILogin .btn_wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.APILogin .login_img_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}

@@ -1,6 +1,7 @@
 import MyQuestion from "../components/MyQuestion";
 import MyHeader from "../components/MyHeader";
 import MyButton from "../components/MyButton";
+import { useCallback, useEffect, useState } from "react";
 
 const Question = () => {
   const question_list = [
@@ -11,6 +12,22 @@ const Question = () => {
     "우리 집에 다른 강아지가 방문이 가능하다",
     "나의 강아지를 누구나 만질 수 있다",
   ];
+
+  const [score, setScore] = useState(0);
+  const [step, setStep] = useState(1);
+
+  const next_btn_click = useCallback(() => {
+    setStep((step) => step + 1);
+    console.log(step);
+  });
+
+  const scoreCalc = useCallback(() => {
+    const elements = document.querySelectorAll("input:checked");
+    elements.forEach((it) => {
+      setScore((score) => score + parseInt(it.getAttribute("value")));
+    });
+    console.log(score);
+  }, [step]);
 
   // prettier-ignore
   return (
@@ -26,7 +43,7 @@ const Question = () => {
         <MyQuestion key={index} num={index} text={it} />
       ))}
       <div className="btn_wrapper">
-        <MyButton type="arrow_next" />
+        <MyButton type="arrow_next" onClick={next_btn_click} />
       </div>
     </div>
   );
