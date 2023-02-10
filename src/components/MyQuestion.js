@@ -1,6 +1,7 @@
 import MyCheck from "./MyCheck";
+import React from "react";
 
-const MyQuestion = ({ text, num, percentIncrease }) => {
+const MyQuestion = ({ text, num, percentIncrease, step }) => {
   return (
     <div className={`MyQuestion`} id={`q${num}`}>
       <h2>{text}</h2>
@@ -10,36 +11,42 @@ const MyQuestion = ({ text, num, percentIncrease }) => {
           type={"Every"}
           value={-3}
           percentIncrease={percentIncrease}
+          step={step}
         />
         <MyCheck
           num={num}
           type={"Almost"}
           value={-2}
           percentIncrease={percentIncrease}
+          step={step}
         />
         <MyCheck
           num={num}
           type={"Sometimes"}
           value={-1}
           percentIncrease={percentIncrease}
+          step={step}
         />
         <MyCheck
           num={num}
           type={"Sometimes"}
           value={1}
           percentIncrease={percentIncrease}
+          step={step}
         />
         <MyCheck
           num={num}
           type={"Almost"}
           value={2}
           percentIncrease={percentIncrease}
+          step={step}
         />
         <MyCheck
           num={num}
           type={"Every"}
           value={3}
           percentIncrease={percentIncrease}
+          step={step}
         />
       </div>
       <div className="label_for_check">

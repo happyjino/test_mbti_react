@@ -7,14 +7,33 @@ import { useNavigate } from "react-router-dom";
 const Question = () => {
   const navigate = useNavigate();
 
-  const question_list = [
-    "우리 반려견은 자기가 사람인 줄 안다",
-    "다른 개와 잘 어울린다",
-    "자신이 싫어하는 행동을 계속 하면 무려고 한다",
-    "다른 강아지를 만나면 보호자 뒤로 숨으려 한다",
-    "우리 집에 다른 강아지가 방문이 가능하다",
-    "나의 강아지를 누구나 만질 수 있다",
-  ];
+  const quest_list_box = {
+    ques1: [
+      "우리 반려견은 자기가 사람인 줄 안다",
+      "다른 개와 잘 어울린다",
+      "자신이 싫어하는 행동을 계속 하면 무려고 한다",
+      "다른 강아지를 만나면 보호자 뒤로 숨으려 한다",
+      "우리 집에 다른 강아지가 방문이 가능하다",
+      "나의 강아지를 누구나 만질 수 있다",
+    ],
+    ques2: [
+      "다른 개와 잘 어울린다",
+      "다른 개와 잘 어울린다",
+      "다른 개와 잘 어울린다",
+      "다른 개와 잘 어울린다",
+      "다른 개와 잘 어울린다",
+      "다른 개와 잘 어울린다",
+      "다른 개와 잘 어울린다",
+      "다른 개와 잘 어울린다",
+      "다른 개와 잘 어울린다",
+      "다른 개와 잘 어울린다",
+      "다른 개와 잘 어울린다",
+      "다른 개와 잘 어울린다",
+      "다른 개와 잘 어울린다",
+      "다른 개와 잘 어울린다",
+      "다른 개와 잘 어울린다",
+    ],
+  };
 
   const [score, setScore] = useState({
     score1: 0,
@@ -22,6 +41,8 @@ const Question = () => {
     score3: 0,
     score4: 0,
   });
+
+  const [questList, setQuestList] = useState(quest_list_box.ques1);
   const [step, setStep] = useState(1);
   const [percent, setPercent] = useState(0);
 
@@ -48,12 +69,28 @@ const Question = () => {
         };
       });
     });
-  }, [step]);
 
-  useEffect(() => {
-    if (step === 5) {
-      navigate("/");
+    if (step === 3) {
+      navigate("/result");
     }
+
+    const quest = quest_list_box[`ques${step}`];
+    setQuestList(quest);
+
+    setPercent(0);
+
+    const allElement = document.getElementsByClassName("radio_check");
+    for (var i = 0; i < allElement.length; i++) {
+      allElement[i].checked = false;
+      allElement[i].disabled = true;
+    }
+
+    const firstElement = document.getElementById(`q0`);
+    firstElement.style.opacity = 1;
+    firstElement.scrollIntoView({ behavior: "smooth", block: "center" });
+    document
+      .getElementsByName(`question0`)
+      .forEach((it) => it.removeAttribute("disabled"));
   }, [step]);
 
   // prettier-ignore
@@ -66,12 +103,13 @@ const Question = () => {
           <div className="charge_bar" id="charging"/>
         </div>
       </div>
-      {question_list.map((it, index) => (
+      {questList.map((it, index) => (
         <MyQuestion
           key={index}
           num={index}
           text={it}
           percentIncrease={percentIncrease}
+          step={step}
         />
       ))}
       <div className="btn_wrapper">

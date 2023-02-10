@@ -18,6 +18,7 @@ import EmailLogin from "./pages/EmailLogin";
 import Question from "./pages/Question";
 import DogInfo from "./pages/DogInfo";
 import Transition from "./components/Transition";
+import Result from "./pages/Result";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/login" element={<EmailLogin />} />
           <Route path="/question" element={<Question />} />
           <Route path="/doginfo" element={<DogInfo />} />
+          <Route path="/result" element={<Result />} />
         </Routes>
       </div>
     </BrowserRouter>

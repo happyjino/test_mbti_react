@@ -1,16 +1,6 @@
 import { useEffect } from "react";
 
-const MyCheck = ({ type, num, value, percentIncrease }) => {
-  useEffect(() => {
-    if (num === 0) {
-      // firstElement Control
-      document.getElementById(`q0`).style.opacity = 1;
-      document
-        .getElementsByName("question0")
-        .forEach((it) => it.removeAttribute("disabled"));
-    }
-  }, []);
-
+const MyCheck = ({ type, num, value, percentIncrease, step }) => {
   const handleCheck = () => {
     const nextQuestion = document.getElementById(`q${num + 1}`);
     const question = document.getElementById(`q${num}`);
@@ -23,7 +13,7 @@ const MyCheck = ({ type, num, value, percentIncrease }) => {
     if (nextQuestion && question.style.opacity === "1") {
       nextQuestion.scrollIntoView({ behavior: "smooth", block: "center" });
       nextQuestion.style.opacity = 1;
-      nextElement.forEach((it) => it.removeAttribute("disabled"));
+      nextElement.forEach((it) => (it.disabled = false));
     }
     question.style.opacity = 0.3;
   };
