@@ -10,11 +10,20 @@ const Question = () => {
   const quest_list_box = {
     ques1: [
       "우리 반려견은 자기가 사람인 줄 안다",
-      "다른 개와 잘 어울린다",
-      "자신이 싫어하는 행동을 계속 하면 무려고 한다",
-      "다른 강아지를 만나면 보호자 뒤로 숨으려 한다",
-      "우리 집에 다른 강아지가 방문이 가능하다",
-      "나의 강아지를 누구나 만질 수 있다",
+      "우리 반려견은 자기가 사람인 줄 안다",
+      "우리 반려견은 자기가 사람인 줄 안다",
+      "우리 반려견은 자기가 사람인 줄 안다",
+      "우리 반려견은 자기가 사람인 줄 안다",
+      "우리 반려견은 자기가 사람인 줄 안다",
+      "우리 반려견은 자기가 사람인 줄 안다",
+      "우리 반려견은 자기가 사람인 줄 안다",
+      "우리 반려견은 자기가 사람인 줄 안다",
+      "우리 반려견은 자기가 사람인 줄 안다",
+      "우리 반려견은 자기가 사람인 줄 안다",
+      "우리 반려견은 자기가 사람인 줄 안다",
+      "우리 반려견은 자기가 사람인 줄 안다",
+      "우리 반려견은 자기가 사람인 줄 안다",
+      "우리 반려견은 자기가 사람인 줄 안다",
     ],
     ques2: [
       "다른 개와 잘 어울린다",
@@ -33,18 +42,17 @@ const Question = () => {
       "다른 개와 잘 어울린다",
       "다른 개와 잘 어울린다",
     ],
+    ques3: ["다른 개와 잘 어울린다", "다른 개와 잘 어울린다"],
+    ques4: ["다른 개와 잘 어울린다", "다른 개와 잘 어울린다"],
   };
-
-  const [score, setScore] = useState({
-    score1: 0,
-    score2: 0,
-    score3: 0,
-    score4: 0,
-  });
 
   const [questList, setQuestList] = useState(quest_list_box.ques1);
   const [step, setStep] = useState(1);
   const [percent, setPercent] = useState(0);
+  const [score1, setScore1] = useState(0);
+  const [score2, setScore2] = useState(0);
+  const [score3, setScore3] = useState(0);
+  const [score4, setScore4] = useState(0);
 
   const percentIncrease = (num) => {
     if (num % 3 === 0) {
@@ -61,25 +69,20 @@ const Question = () => {
 
   useEffect(() => {
     const elements = document.querySelectorAll("input:checked");
+    var stepScore = 0;
     elements.forEach((it) => {
-      setScore((score) => {
-        return {
-          ...score,
-          score1: score.score1 + parseInt(it.getAttribute("value")),
-        };
-      });
+      stepScore = stepScore + parseInt(it.getAttribute("value"));
     });
 
-    if (step === 3) {
+    if (step === 5) {
       navigate("/result");
     }
 
-    const quest = quest_list_box[`ques${step}`];
-    setQuestList(quest);
+    setQuestList(quest_list_box[`ques${step}`]);
 
     setPercent(0);
 
-    const allElement = document.getElementsByClassName("radio_check");
+    const allElement = document.getElementsByClassName("radio-check");
     for (var i = 0; i < allElement.length; i++) {
       allElement[i].checked = false;
       allElement[i].disabled = true;
@@ -95,12 +98,12 @@ const Question = () => {
 
   // prettier-ignore
   return (
-    <div className="Question">
+    <div className="question">
       <MyHeader />
-      <div className="process_bar">
+      <div className="process-bar">
         <div className="percent">{percent}%</div>
         <div className="bar">
-          <div className="charge_bar" id="charging"/>
+          <div className="charge-bar" id="charging"/>
         </div>
       </div>
       {questList.map((it, index) => (
@@ -112,7 +115,7 @@ const Question = () => {
           step={step}
         />
       ))}
-      <div className="btn_wrapper">
+      <div className="btn-wrapper">
         <MyButton type="arrow_next" onClick={() => setStep(step + 1)} />
       </div>
     </div>

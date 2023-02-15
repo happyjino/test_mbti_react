@@ -1,6 +1,6 @@
 /* MyCheck */
 
-.Question .container {
+.question .container {
   display: flex;
   margin-bottom: 20px;
   cursor: pointer;
@@ -37,7 +37,7 @@
   width: 25px;
 }
 
-.container input:checked ~ .check {
+.question .container input:checked ~ .check {
   background-color: #665645;
   background-image: url("../../public/assets/check_icon.png");
   background-repeat: no-repeat;
@@ -65,13 +65,13 @@
   background-color: #665645;
 }
 
-input.checkEvery {
+input.check-Every {
   display: none;
 }
 
-input.checkAlmost {
+input.check-Almost {
   display: none;
 }
-input.checkSometimes {
+input.check-Sometimes {
   display: none;
 }

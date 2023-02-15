@@ -1,13 +1,13 @@
 const MyHeader = () => {
   return (
-    <header className="MyHeader">
-      <span className="material-symbols-outlined head_icon_left">
-        <a className="home_icon" href="/">
+    <header className="header">
+      <span className="material-symbols-outlined head-icon-left">
+        <a className="home-icon" href="/">
           home
         </a>
       </span>
-      <div className="head_text">DBTI 분석하기</div>
-      <span className="material-symbols-outlined head_icon_right">list</span>
+      <div className="head-text">DBTI 분석하기</div>
+      <span className="material-symbols-outlined head-icon-right">list</span>
     </header>
   );
 };

@@ -19,10 +19,10 @@ const MyCheck = ({ type, num, value, percentIncrease, step }) => {
   };
 
   return (
-    <label className="container MyCheck">
+    <label className="container mycheck">
       <input
         type="radio"
-        className={`check${type} radio_check`}
+        className={`check-${type} radio-check`}
         name={`question${num}`}
         onChange={handleCheck}
         value={value}

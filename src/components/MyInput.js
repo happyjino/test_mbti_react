@@ -1,7 +1,7 @@
 const MyInput = ({ name, type, value, text }) => {
   if (type === "radio") {
     return (
-      <label className="container MyRadio">
+      <label className="container radio">
         <input
           type="radio"
           className="check"
@@ -9,12 +9,12 @@ const MyInput = ({ name, type, value, text }) => {
           name={name}
           value={value}
         />
-        <span className={`check check${value}`}>{text}</span>
+        <span className={`check check-${value}`}>{text}</span>
       </label>
     );
   }
 
-  return <input className="MyInput" type={type} placeholder={name} />;
+  return <input className="input" type={type} placeholder={text} />;
 };
 
 export default MyInput;

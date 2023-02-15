@@ -7,20 +7,26 @@ import MyInput from "../components/MyInput";
 const DogInfo = () => {
   const [step, setStep] = useState(1);
   const navigate = useNavigate();
+  const [dogType, setDogType] = useState("견종");
 
   const DogInfoBox = () => {
     if (step === 1) {
       return (
         <>
-          <div className="input_wrapper">
-            <div className="input_box">
-              <MyInput type="text" name="이름" />
+          <div className="input-wrapper">
+            <div className="input-box">
+              <MyInput type="text" name="d_name" text="이름" />
             </div>
-            <div className="input_box">
-              <MyInput type="text" name="견종" />
+            <div className="input-box">
+              <div className="d-type-box">
+                <div className="text">{dogType}</div>
+                <span className="material-symbols-outlined arrow">
+                  arrow_forward_ios
+                </span>
+              </div>
             </div>
           </div>
-          <div className="btn_wrapper">
+          <div className="btn-wrapper">
             <MyButton
               text="다음으로"
               onClick={() => {
@@ -33,34 +39,34 @@ const DogInfo = () => {
     } else if (step === 2) {
       return (
         <>
-          <div className="input_wrapper">
-            <div className="input_title">생년월일</div>
-            <div className="input_box">
-              <MyInput type="number" name="년" />
-              <MyInput type="number" name="월" />
-              <MyInput type="number" name="일" />
+          <div className="input-wrapper">
+            <div className="input-title">생년월일</div>
+            <div className="input-box text-left">
+              <MyInput type="number" name="d_birth_year" text="년" />
+              <MyInput type="number" name="d_birth_month" text="월" />
+              <MyInput type="number" name="d_birth_day" text="일" />
             </div>
-            <div className="input_title">성별</div>
-            <div className="input_box text_center radio_box">
-              <MyInput type="radio" name="성별" value="Man" text="남아" />
-              <MyInput type="radio" name="성별" value="Woman" text="여아" />
+            <div className="input-title">성별</div>
+            <div className="input-box text-center radio-box">
+              <MyInput type="radio" name="d_sex" value="Man" text="남아" />
+              <MyInput type="radio" name="d_sex" value="Woman" text="여아" />
             </div>
-            <div className="input_title">중성화 수술 여부</div>
-            <div className="input_box text_center radio_box">
-              <MyInput type="radio" name="중성화" value="True" text="유" />
-              <MyInput type="radio" name="중성화" value="False" text="무" />
+            <div className="input-title">중성화 수술 여부</div>
+            <div className="input-box text-center radio-box">
+              <MyInput type="radio" name="d_ntlz" value="True" text="유" />
+              <MyInput type="radio" name="d_ntlz" value="False" text="무" />
             </div>
-            <div className="input_title">몸무게</div>
-            <div className="input_box">
-              <div className="weight_box text_center">
-                <MyInput type="number" name="00" />
-                <div className="weight_text">.</div>
-                <MyInput type="number" name="00" />
-                <div className="weight_text">kg</div>
+            <div className="input-title">몸무게</div>
+            <div className="input-box">
+              <div className="weight-box text-center">
+                <MyInput type="number" name="d_weight_int" text={"00"} />
+                <div className="weight-text point">.</div>
+                <MyInput type="number" name="d_weight_deci" text={"00"} />
+                <div className="weight-text">kg</div>
               </div>
             </div>
           </div>
-          <div className="btn_wrapper">
+          <div className="btn-wrapper">
             <MyButton
               text="다음으로"
               onClick={() => {
@@ -72,7 +78,7 @@ const DogInfo = () => {
       );
     } else if (step === 3) {
       return (
-        <div className="btn_wrapper">
+        <div className="btn-wrapper">
           <MyButton
             text="완료"
             onClick={() => {
@@ -86,8 +92,8 @@ const DogInfo = () => {
   };
 
   return (
-    <div className="DogInfo">
-      <div className="header_wrapper">
+    <div className="dog-info">
+      <div className="header-wrapper">
         <MyHeader />
       </div>
       {DogInfoBox()}

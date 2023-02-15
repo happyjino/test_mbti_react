@@ -3,9 +3,9 @@ import React from "react";
 
 const MyQuestion = ({ text, num, percentIncrease, step }) => {
   return (
-    <div className={`MyQuestion`} id={`q${num}`}>
+    <div className={`myquestion`} id={`q${num}`}>
       <h2>{text}</h2>
-      <div className="CheckList">
+      <div className="check-list">
         <MyCheck
           num={num}
           type={"Every"}
@@ -49,15 +49,15 @@ const MyQuestion = ({ text, num, percentIncrease, step }) => {
           step={step}
         />
       </div>
-      <div className="label_for_check">
-        <div className="left_child">
-          <h4 className="text_wrapper">
+      <div className="label-for-check">
+        <div className="left-child">
+          <h4 className="text-wrapper">
             절대 <br />
             그러지 않아요
           </h4>
         </div>
-        <div className="right_child">
-          <h4 className="text_wrapper">
+        <div className="right-child">
+          <h4 className="text-wrapper">
             항상 <br />
             그래요
           </h4>
@@ -67,4 +67,4 @@ const MyQuestion = ({ text, num, percentIncrease, step }) => {
   );
 };
 
-export default MyQuestion;
+export default React.memo(MyQuestion);

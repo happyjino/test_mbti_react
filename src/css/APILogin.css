@@ -1,6 +1,6 @@
 /* API Wrapper */
 
-.APILogin {
+.api-login {
   background-color: #665645;
   padding: 50px;
   border-bottom-left-radius: 50px;
@@ -8,14 +8,14 @@
   min-height: 100vh;
 }
 
-.api_btn_wrapper {
+.api-btn-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5px;
 }
 
-.APIButton {
+.api-button {
   cursor: pointer;
   border: none;
   border-radius: 12px;
@@ -34,12 +34,12 @@
   white-space: nowrap;
 }
 
-.APILogin .btn_wrapper {
+.api-login .btn-wrapper {
   display: flex;
   width: 100%;
 }
 
-.APILogin .login_img_wrapper {
+.api-login .login-img-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;

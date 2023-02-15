@@ -1,6 +1,6 @@
 /* MyQuestion */
 
-.MyQuestion {
+.myquestion {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,55 +18,55 @@
   opacity: 1;
 } */
 
-.MyQuestion .CheckList {
+.myquestion .check-list {
   display: flex;
 }
 
-.MyQuestion .label_for_check {
+.myquestion .label-for-check {
   display: flex;
   align-items: center;
   width: 80%;
 }
 
-.MyQuestion .label_for_check .left_child {
+.myquestion .label-for-check .left-child {
   display: flex;
   justify-content: flex-start;
   width: 50%;
   margin: 0px;
 }
 
-.MyQuestion .label_for_check .right_child {
+.myquestion .label-for-check .right-child {
   display: flex;
   justify-content: flex-end;
   width: 50%;
   margin: 0px;
 }
 
-.MyQuestion .text_wrapper {
+.myquestion .text-wrapper {
   text-align: center;
   margin: 0px;
   width: 71.6px;
 }
 
-.arrow_btn {
+.arrow-btn {
   color: white;
   display: flex;
 }
 
-.arrow_btn .btn_text_left {
+.arrow-btn .btn-text-left {
   display: flex;
   justify-content: flex-start;
   width: 50%;
 }
 
-.arrow_btn .btn_text_right {
+.arrow-btn .btn-text-right {
   display: flex;
   justify-content: flex-end;
   width: 50%;
   align-items: center;
 }
 
-.arrow_btn .btn_text_center {
+.arrow-btn .btn-text-center {
   display: flex;
   width: 55%;
   justify-content: flex-end;
@@ -75,7 +75,7 @@
   font-weight: 400;
 }
 
-.icon_center {
+.icon-center {
   margin-left: 10px;
 
   display: flex;
@@ -84,7 +84,7 @@
   align-items: center;
 }
 
-.Question .btn_wrapper {
+.question .btn-wrapper {
   display: flex;
   justify-content: center;
 
@@ -93,10 +93,10 @@
   margin-bottom: 100px;
 }
 
-.Question .MyButton_arrow_next {
+.question .mybutton-arrow-next {
   width: 70%;
 }
 
-.Question #id0 {
+.question #id0 {
   opacity: 1;
 }

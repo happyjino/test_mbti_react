@@ -9,16 +9,20 @@ const APILogin = () => {
   };
 
   return (
-    <div className="APILogin">
-      <div className="login_img_wrapper">
+    <div className="api-login">
+      <div className="login-img-wrapper">
         <div className="logo">멍BTI LOGO</div>
-        <img alt="개" src={process.env.PUBLIC_URL + `assets/dog.jpg`} />
+        <img
+          alt="개"
+          src={process.env.PUBLIC_URL + `assets/dog.jpg`}
+          width="90%"
+        />
       </div>
-      <div className="api_btn_wrapper">
-        <button className="APIButton">구글 계정으로 로그인</button>
-        <button className="APIButton">카카오 로그인</button>
+      <div className="api-btn-wrapper">
+        <button className="api-button">구글 계정으로 로그인</button>
+        <button className="api-button">카카오 로그인</button>
       </div>
-      <div className="btn_wrapper">
+      <div className="btn-wrapper">
         <MyButton text="회원가입"></MyButton>
         <MyButton text="로그인" onClick={goEmailLogin}></MyButton>
       </div>
