@@ -11,7 +11,7 @@ const APILogin = () => {
   return (
     <div className="api-login">
       <div className="login-img-wrapper">
-        <div className="logo">멍BTI LOGO</div>
+        <div>멍BTI LOGO</div>
         <img
           alt="개"
           src={process.env.PUBLIC_URL + `assets/dog.jpg`}

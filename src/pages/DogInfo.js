@@ -13,14 +13,17 @@ const DogInfo = () => {
     if (step === 1) {
       return (
         <>
-          <div className="input-wrapper">
+          <div className="main">
             <div className="input-box">
               <MyInput type="text" name="d_name" text="이름" />
             </div>
             <div className="input-box">
               <div className="d-type-box">
-                <div className="text">{dogType}</div>
-                <span className="material-symbols-outlined arrow">
+                <div className="d-type-text">{dogType}</div>
+                <span
+                  className="material-symbols-outlined"
+                  style={{ fontSize: "15px" }}
+                >
                   arrow_forward_ios
                 </span>
               </div>
@@ -39,7 +42,7 @@ const DogInfo = () => {
     } else if (step === 2) {
       return (
         <>
-          <div className="input-wrapper">
+          <div className="main">
             <div className="input-title">생년월일</div>
             <div className="input-box text-left">
               <MyInput type="number" name="d_birth_year" text="년" />
@@ -47,20 +50,22 @@ const DogInfo = () => {
               <MyInput type="number" name="d_birth_day" text="일" />
             </div>
             <div className="input-title">성별</div>
-            <div className="input-box text-center radio-box">
+            <div className="input-box">
               <MyInput type="radio" name="d_sex" value="Man" text="남아" />
               <MyInput type="radio" name="d_sex" value="Woman" text="여아" />
             </div>
             <div className="input-title">중성화 수술 여부</div>
-            <div className="input-box text-center radio-box">
+            <div className="input-box">
               <MyInput type="radio" name="d_ntlz" value="True" text="유" />
               <MyInput type="radio" name="d_ntlz" value="False" text="무" />
             </div>
             <div className="input-title">몸무게</div>
             <div className="input-box">
-              <div className="weight-box text-center">
+              <div className="weight-box">
                 <MyInput type="number" name="d_weight_int" text={"00"} />
-                <div className="weight-text point">.</div>
+                <div className="weight-text" style={{ fontSize: "30px" }}>
+                  .
+                </div>
                 <MyInput type="number" name="d_weight_deci" text={"00"} />
                 <div className="weight-text">kg</div>
               </div>
@@ -93,9 +98,7 @@ const DogInfo = () => {
 
   return (
     <div className="dog-info">
-      <div className="header-wrapper">
-        <MyHeader />
-      </div>
+      <MyHeader />
       {DogInfoBox()}
     </div>
   );

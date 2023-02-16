@@ -1,15 +1,17 @@
 const MyInput = ({ name, type, value, text }) => {
   if (type === "radio") {
     return (
-      <label className="container radio">
+      <label className="check-container">
         <input
           type="radio"
-          className="check"
-          id={`check${value}`}
+          className="check-point"
           name={name}
           value={value}
+          style={{ display: "none" }}
         />
-        <span className={`check check-${value}`}>{text}</span>
+        <span className={`check-box`} style={{ textAlign: "center" }}>
+          {text}
+        </span>
       </label>
     );
   }

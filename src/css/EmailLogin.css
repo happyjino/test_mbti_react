@@ -14,8 +14,14 @@
   margin-bottom: 50px;
 
   font-size: 30px;
-  font-family: Arial, Helvetica, sans-serif;
   color: white;
+}
+
+.email-login .input-box {
+  display: flex;
+  padding: 5px 0px;
+
+  width: 100%;
 }
 
 .login-wrapper {
@@ -30,7 +36,6 @@
   background-color: #b79e84;
   color: white;
 
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   margin: 10px;
 }

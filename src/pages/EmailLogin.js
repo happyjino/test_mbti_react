@@ -8,7 +8,7 @@ const EmailLogin = () => {
   return (
     <div className="email-login">
       <div className="login-img-wrapper">
-        <div className="logo">멍BTI LOGO</div>
+        <div>멍BTI LOGO</div>
       </div>
       <form method="get" action="/login_result">
         <div className="input-box">

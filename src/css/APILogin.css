@@ -8,14 +8,26 @@
   min-height: 100vh;
 }
 
-.api-btn-wrapper {
+.api-login .login-img-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+
+  margin-bottom: 20px;
+
+  font-size: 30px;
+  color: white;
+}
+
+.api-login .api-btn-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5px;
 }
 
-.api-button {
+.api-login .api-button {
   cursor: pointer;
   border: none;
   border-radius: 12px;
@@ -28,26 +40,9 @@
   margin: 8px;
 
   font-size: 13px;
-  font-family: "Inter";
   font-weight: 400;
-
-  white-space: nowrap;
 }
 
 .api-login .btn-wrapper {
   display: flex;
-  width: 100%;
-}
-
-.api-login .login-img-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  margin-bottom: 20px;
-
-  font-size: 30px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
 }
