@@ -71,7 +71,6 @@
 /* check-text */
 .question-box .label-for-check {
   display: flex;
-  /* align-items: center; */
   width: 80%;
 }
 
@@ -79,16 +78,14 @@
   display: flex;
   justify-content: flex-start;
   width: 50%;
+  margin-left: 4px;
+  text-align: center;
 }
 
 .question-box .label-for-check .right-child {
   display: flex;
   justify-content: flex-end;
   width: 50%;
-}
-
-.question-box .text-wrapper {
+  margin-right: 20px;
   text-align: center;
-  margin: 0px;
-  width: 71.6px;
 }

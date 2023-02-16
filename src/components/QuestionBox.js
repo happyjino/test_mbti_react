@@ -1,59 +1,30 @@
 import React from "react";
 
 const QuestionBox = ({ text, num, percentIncrease, step }) => {
+  const score = [-3, -2, -1, 1, 2, 3];
+
   return (
     <div className={`question-box`} id={`box${num}`}>
       <h2>{text}</h2>
       <div className="check-list" style={{ display: "flex" }}>
-        <MyCheck
-          num={num}
-          value={-3}
-          percentIncrease={percentIncrease}
-          step={step}
-        />
-        <MyCheck
-          num={num}
-          value={-2}
-          percentIncrease={percentIncrease}
-          step={step}
-        />
-        <MyCheck
-          num={num}
-          value={-1}
-          percentIncrease={percentIncrease}
-          step={step}
-        />
-        <MyCheck
-          num={num}
-          value={1}
-          percentIncrease={percentIncrease}
-          step={step}
-        />
-        <MyCheck
-          num={num}
-          value={2}
-          percentIncrease={percentIncrease}
-          step={step}
-        />
-        <MyCheck
-          num={num}
-          value={3}
-          percentIncrease={percentIncrease}
-          step={step}
-        />
+        {score.map((score) => (
+          <MyCheck
+            key={score}
+            num={num}
+            value={score}
+            percentIncrease={percentIncrease}
+            step={step}
+          />
+        ))}
       </div>
       <div className="label-for-check">
         <div className="left-child">
-          <h4 className="text-wrapper">
-            절대 <br />
-            그러지 않아요
-          </h4>
+          절대 <br />
+          그러지 않아요
         </div>
         <div className="right-child">
-          <h4 className="text-wrapper">
-            항상 <br />
-            그래요
-          </h4>
+          항상 <br />
+          그래요
         </div>
       </div>
     </div>
@@ -79,7 +50,6 @@ const MyCheck = ({ num, value, percentIncrease, step }) => {
 
   const type_value = Math.abs(value);
   var type;
-
   switch (type_value) {
     case 3:
       type = "big";
@@ -91,8 +61,8 @@ const MyCheck = ({ num, value, percentIncrease, step }) => {
       type = "small";
       break;
     default:
-      break;
   }
+
   return (
     <label className="check-container">
       <input

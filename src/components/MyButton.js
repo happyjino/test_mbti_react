@@ -1,7 +1,7 @@
 const MyButton = ({ type, text, onClick }) => {
   const btn_type = type;
 
-  const text1 = () => {
+  const content = () => {
     if (type === "arrow") {
       return (
         <div className="arrow-btn">
@@ -27,7 +27,7 @@ const MyButton = ({ type, text, onClick }) => {
 
   return (
     <button className={["button", `${btn_type}`].join(" ")} onClick={onClick}>
-      {text1()}
+      {content()}
     </button>
   );
 };
