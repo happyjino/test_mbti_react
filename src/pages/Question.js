@@ -1,7 +1,7 @@
-import MyQuestion from "../components/MyQuestion";
+import QuestionBox from "../components/QuestionBox";
 import MyHeader from "../components/MyHeader";
 import MyButton from "../components/MyButton";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Question = () => {
@@ -49,10 +49,10 @@ const Question = () => {
   const [questList, setQuestList] = useState(quest_list_box.ques1);
   const [step, setStep] = useState(1);
   const [percent, setPercent] = useState(0);
-  const [score1, setScore1] = useState(0);
-  const [score2, setScore2] = useState(0);
-  const [score3, setScore3] = useState(0);
-  const [score4, setScore4] = useState(0);
+  // const [score1, setScore1] = useState(0);
+  // const [score2, setScore2] = useState(0);
+  // const [score3, setScore3] = useState(0);
+  // const [score4, setScore4] = useState(0);
 
   const percentIncrease = (num) => {
     if (num % 3 === 0) {
@@ -82,13 +82,13 @@ const Question = () => {
 
     setPercent(0);
 
-    const allElement = document.getElementsByClassName("radio-check");
+    const allElement = document.getElementsByClassName("check-element");
     for (var i = 0; i < allElement.length; i++) {
       allElement[i].checked = false;
       allElement[i].disabled = true;
     }
 
-    const firstElement = document.getElementById(`q0`);
+    const firstElement = document.getElementById(`box0`);
     firstElement.style.opacity = 1;
     firstElement.scrollIntoView({ behavior: "smooth", block: "center" });
     document
@@ -107,7 +107,7 @@ const Question = () => {
         </div>
       </div>
       {questList.map((it, index) => (
-        <MyQuestion
+        <QuestionBox
           key={index}
           num={index}
           text={it}
@@ -116,7 +116,7 @@ const Question = () => {
         />
       ))}
       <div className="btn-wrapper">
-        <MyButton type="arrow_next" onClick={() => setStep(step + 1)} />
+        <MyButton type="question-next" onClick={() => setStep(step + 1)} />
       </div>
     </div>
   );

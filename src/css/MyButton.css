@@ -19,3 +19,21 @@
 
   white-space: nowrap;
 }
+
+.arrow-btn {
+  color: white;
+  display: flex;
+}
+
+.btn-text-left {
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+}
+
+.btn-text-right {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  align-items: center;
+}

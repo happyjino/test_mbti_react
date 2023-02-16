@@ -4,9 +4,8 @@ import "./css/APILogin.css";
 import "./css/EmailLogin.css";
 import "./css/MyButton.css";
 import "./css/Question.css";
-import "./css/MyCheck.css";
 import "./css/PageAnimation.css";
-import "./css/MyQuestion.css";
+import "./css/QuestionBox.css";
 import "./css/MyInput.css";
 import "./css/DogInfo.css";
 

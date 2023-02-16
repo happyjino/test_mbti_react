@@ -1,11 +1,11 @@
 import MyButton from "../components/MyButton";
 import MyInput from "../components/MyInput";
-import MyQuestion from "../components/MyQuestion";
+import QuestionBox from "../components/QuestionBox";
 
 const Test = () => {
   return (
     <div>
-      <MyQuestion />
+      <QuestionBox />
       <div className="test_wrapper">
         <MyButton type={"arrow"} text="MBTI 분석하기" />
         <div className="input_box">

@@ -11,11 +11,13 @@ const MyButton = ({ type, text, onClick }) => {
           </span>
         </div>
       );
-    } else if (type === "arrow_next") {
+    } else if (type === "question-next") {
       return (
         <div className="arrow-btn">
-          <div className="btn-text-center">다음</div>
-          <span className="material-symbols-outlined icon-center">east</span>
+          <div className="question-next-button">다음</div>
+          <span className="material-symbols-outlined question-button-arrow">
+            east
+          </span>
         </div>
       );
     } else {
@@ -24,10 +26,7 @@ const MyButton = ({ type, text, onClick }) => {
   };
 
   return (
-    <button
-      className={["button", `button-${btn_type}`].join(" ")}
-      onClick={onClick}
-    >
+    <button className={["button", `${btn_type}`].join(" ")} onClick={onClick}>
       {text1()}
     </button>
   );
