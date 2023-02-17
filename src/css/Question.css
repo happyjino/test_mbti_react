@@ -59,6 +59,13 @@
   padding: 10px;
 }
 
+/* incomplete button */
+.question .incomplete {
+  background-color: gray;
+  padding: 15px 0px;
+  font-size: 15px;
+}
+
 .question button {
   width: 70%;
 }

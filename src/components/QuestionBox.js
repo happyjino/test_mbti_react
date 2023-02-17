@@ -4,7 +4,7 @@ const QuestionBox = ({ text, num, percentIncrease, step }) => {
   const score = [-3, -2, -1, 1, 2, 3];
 
   return (
-    <div className={`question-box`} id={`box${num}`}>
+    <div className={`question-box boxs${num}`} id={`box${num}`}>
       <h2>{text}</h2>
       <div className="check-list" style={{ display: "flex" }}>
         {score.map((score) => (

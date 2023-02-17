@@ -17,7 +17,8 @@ const EmailLogin = () => {
     } else if (pw_input.value < 1) {
       pw_input.focus();
     } else {
-      document.getElementById("email_login").submit();
+      // document.getElementById("email_login").submit();
+      navigate("/doginfo");
     }
     event.preventDefault();
   };

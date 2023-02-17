@@ -42,7 +42,23 @@ const Question = () => {
       "다른 개와 잘 어울린다",
       "다른 개와 잘 어울린다",
     ],
-    ques3: ["다른 개와 잘 어울린다", "다른 개와 잘 어울린다"],
+    ques3: [
+      "간식을 너무 좋아한다",
+      "간식을 너무 좋아한다",
+      "간식을 너무 좋아한다",
+      "간식을 너무 좋아한다",
+      "간식을 너무 좋아한다",
+      "간식을 너무 좋아한다",
+      "간식을 너무 좋아한다",
+      "간식을 너무 좋아한다",
+      "간식을 너무 좋아한다",
+      "간식을 너무 좋아한다",
+      "간식을 너무 좋아한다",
+      "간식을 너무 좋아한다",
+      "간식을 너무 좋아한다",
+      "간식을 너무 좋아한다",
+      "간식을 너무 좋아한다",
+    ],
     ques4: ["다른 개와 잘 어울린다", "다른 개와 잘 어울린다"],
   };
 
@@ -90,11 +106,28 @@ const Question = () => {
 
     const firstElement = document.getElementById(`box0`);
     firstElement.style.opacity = 1;
-    firstElement.scrollIntoView({ behavior: "smooth", block: "center" });
+    // firstElement.scrollIntoView({ behavior: "smooth", block: "center" });
+    window.scrollTo(0, 0);
     document
       .getElementsByName(`question0`)
       .forEach((it) => it.removeAttribute("disabled"));
   }, [step]);
+
+  const next_button = () => {
+    if (percent !== 100) {
+      return (
+        <MyButton
+          type="incomplete"
+          text="위 문항의 응답을 완료해주세요."
+          disabled={true}
+        />
+      );
+    } else {
+      return (
+        <MyButton type="question-next" onClick={() => setStep(step + 1)} />
+      );
+    }
+  };
 
   // prettier-ignore
   return (
@@ -103,7 +136,7 @@ const Question = () => {
       <div className="process-bar">
         <div className="percent">{percent}%</div>
         <div className="bar">
-          <div className="charge-bar" id="charging"/>
+          <div className="charge-bar" id="charging" />
         </div>
       </div>
       {questList.map((it, index) => (
@@ -116,7 +149,9 @@ const Question = () => {
         />
       ))}
       <div className="btn-wrapper">
-        <MyButton type="question-next" onClick={() => setStep(step + 1)} />
+        {/* <MyButton type="question-next" onClick={() => setStep(step + 1)} /> */}
+        {next_button()}
+        {/* <MyButton type="question-next" onClick={() => setStep(step + 1)} /> */}
       </div>
     </div>
   );

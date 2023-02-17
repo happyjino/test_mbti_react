@@ -1,4 +1,4 @@
-const MyButton = ({ type, text, onClick }) => {
+const MyButton = ({ type, text, onClick, disabled }) => {
   const btn_type = type;
 
   const content = () => {
@@ -26,7 +26,11 @@ const MyButton = ({ type, text, onClick }) => {
   };
 
   return (
-    <button className={["button", `${btn_type}`].join(" ")} onClick={onClick}>
+    <button
+      className={["button", `${btn_type}`].join(" ")}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {content()}
     </button>
   );
