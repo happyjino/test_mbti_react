@@ -16,7 +16,7 @@ const MyInput = ({ name, type, value, text }) => {
     );
   }
 
-  return <input className="input" type={type} placeholder={text} />;
+  return <input className="input" name={name} type={type} placeholder={text} />;
 };
 
 export default MyInput;

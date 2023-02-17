@@ -1,16 +1,33 @@
 import MyButton from "../components/MyButton";
 import MyInput from "../components/MyInput";
 import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
 
 const EmailLogin = () => {
+  const email = useRef();
+  const pw = useRef();
   const navigate = useNavigate();
+
+  const handleLogin = (event) => {
+    const email_input = document.getElementsByName("email")[0];
+    const pw_input = document.getElementsByName("password")[0];
+
+    if (email_input.value < 1) {
+      email_input.focus();
+    } else if (pw_input.value < 1) {
+      pw_input.focus();
+    } else {
+      document.getElementById("email_login").submit();
+    }
+    event.preventDefault();
+  };
 
   return (
     <div className="email-login">
       <div className="login-img-wrapper">
         <div>멍BTI LOGO</div>
       </div>
-      <form method="get" action="/login_result">
+      <form method="post" action="/login_result" id="email_login">
         <div className="input-box">
           <MyInput type="text" name="email" text="이메일" />
         </div>
@@ -18,11 +35,7 @@ const EmailLogin = () => {
           <MyInput type="password" name="password" text="비밀번호" />
         </div>
         <div className="login-wrapper">
-          <MyButton
-            text="로그인"
-            type="submit"
-            onClick={() => navigate("/doginfo")}
-          />
+          <MyButton text="로그인" onClick={handleLogin} />
           <button className="forget">비밀번호를 잊어버리셨나요?</button>
         </div>
       </form>
