@@ -4,10 +4,31 @@ import MyButton from "../components/MyButton";
 import MyHeader from "../components/MyHeader";
 import MyInput from "../components/MyInput";
 
+const DogTypeList = ["리트리버", "말라뮤트", "진돗개", "보더콜리", "웰시코기"];
+
 const DogInfo = () => {
   const [step, setStep] = useState(1);
   const navigate = useNavigate();
   const [dogType, setDogType] = useState("견종");
+
+  const [dogInfo, setDogInfo] = useState({
+    defaultInfo: {
+      name: "",
+      d_type: "",
+    },
+    detailInfo: {
+      birth: "",
+      sex: "",
+      ntlz: "",
+      weight: 0,
+    },
+    dogImage: "",
+  });
+
+  const clickNextButton = () => {
+    const valueList = document.getElementsByClassName("input-value");
+    console.log(valueList);
+  };
 
   const DogInfoBox = () => {
     if (step === 1) {
@@ -18,14 +39,17 @@ const DogInfo = () => {
               <MyInput type="text" name="d_name" text="이름" />
             </div>
             <div className="input-box">
-              <div className="d-type-box">
-                <div className="d-type-text">{dogType}</div>
-                <span
-                  className="material-symbols-outlined"
-                  style={{ fontSize: "15px" }}
-                >
-                  arrow_forward_ios
-                </span>
+              <div className="select-wrapper">
+                <select name="dogType" className="d-type-box">
+                  <option value="" disabled hidden selected>
+                    견종
+                  </option>
+                  {DogTypeList.map((it, index) => (
+                    <option key={index} value={it}>
+                      {it}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
           </div>
@@ -33,6 +57,13 @@ const DogInfo = () => {
             <MyButton
               text="다음으로"
               onClick={() => {
+                setDogInfo({
+                  ...dogInfo,
+                  defaultInfo: {
+                    name: "a",
+                    d_type: "b",
+                  },
+                });
                 setStep(2);
               }}
             />
@@ -75,6 +106,15 @@ const DogInfo = () => {
             <MyButton
               text="다음으로"
               onClick={() => {
+                setDogInfo({
+                  ...dogInfo,
+                  detailInfo: {
+                    birth: "19991128",
+                    sex: "male",
+                    ntlz: "true",
+                    weight: 12.37,
+                  },
+                });
                 setStep(3);
               }}
             />
@@ -83,14 +123,30 @@ const DogInfo = () => {
       );
     } else if (step === 3) {
       return (
-        <div className="btn-wrapper">
-          <MyButton
-            text="완료"
-            onClick={() => {
-              navigate("/question");
-            }}
-          />
-        </div>
+        <>
+          <div className="main">
+            {dogInfo.defaultInfo.name}
+            <br />
+            {dogInfo.defaultInfo.d_type}
+            <br />
+            {dogInfo.detailInfo.birth}
+            <br />
+            {dogInfo.detailInfo.sex}
+            <br />
+            {dogInfo.detailInfo.ntlz}
+            <br />
+            {dogInfo.detailInfo.weight}
+            <br />
+          </div>
+          <div className="btn-wrapper">
+            <MyButton
+              text="완료"
+              onClick={() => {
+                navigate("/question");
+              }}
+            />
+          </div>
+        </>
       );
     } else {
     }

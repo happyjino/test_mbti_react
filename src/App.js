@@ -8,6 +8,7 @@ import "./css/PageAnimation.css";
 import "./css/QuestionBox.css";
 import "./css/MyInput.css";
 import "./css/DogInfo.css";
+import "./css/DogPost.css";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -18,6 +19,7 @@ import Question from "./pages/Question";
 import DogInfo from "./pages/DogInfo";
 import Transition from "./components/Transition";
 import Result from "./pages/Result";
+import DogPost from "./pages/DogPost";
 
 function App() {
   return (
@@ -30,6 +32,7 @@ function App() {
           <Route path="/question" element={<Question />} />
           <Route path="/doginfo" element={<DogInfo />} />
           <Route path="/result" element={<Result />} />
+          <Route path="/dogpost" element={<DogPost />} />
         </Routes>
       </div>
     </BrowserRouter>

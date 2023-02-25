@@ -4,7 +4,7 @@ const MyInput = ({ name, type, value, text }) => {
       <label className="check-container">
         <input
           type="radio"
-          className="check-point"
+          className="check-point input-value"
           name={name}
           value={value}
           style={{ display: "none" }}
@@ -16,7 +16,14 @@ const MyInput = ({ name, type, value, text }) => {
     );
   }
 
-  return <input className="input" name={name} type={type} placeholder={text} />;
+  return (
+    <input
+      className="input input-value"
+      name={name}
+      type={type}
+      placeholder={text}
+    />
+  );
 };
 
 export default MyInput;
