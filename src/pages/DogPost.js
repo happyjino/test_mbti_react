@@ -25,10 +25,19 @@ const Post = () => {
         <img src="" alt="강아지이미지" />
       </div>
       <div className="post-like">
-        <span class="material-symbols-outlined heart" onClick={clickHeart}>
+        <span
+          class="material-symbols-outlined post-like-btn"
+          onClick={clickHeart}
+          style={{ fontSize: "35px", fontWeight: "300" }}
+        >
           favorite
         </span>
-        <div className="like-number">{like}</div>
+        <div
+          className="like-number"
+          style={{ fontSize: "25px", fontWeight: "100", marginLeft: "5px" }}
+        >
+          {like}
+        </div>
       </div>
       <div className="post-content">text</div>
     </div>
