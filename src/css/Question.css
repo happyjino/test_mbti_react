@@ -50,6 +50,12 @@
   border-radius: 3px;
 }
 
+.process-bar .step {
+  margin-left: 18px;
+  font-weight: 700;
+  color: #665645;
+}
+
 /* next-button */
 .question .btn-wrapper {
   display: flex;
