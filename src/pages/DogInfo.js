@@ -116,28 +116,45 @@ const DogInfo = () => {
         </>
       );
     } else if (step === 3) {
+
+      const petBirth = petInfo.petBirthYear + "-" + petInfo.petBirthMonth + "-" + petInfo.petBirthDay;
+      const petWeight = petInfo.petWeightInt + "." + petInfo.petWeightDeci
+
       return (
         <>
           <div className="main">
-            {petInfo.petName}
-            <br />
-            {petInfo.petBreed}
-            <br />
-            {petInfo.petBirthYear}
-            <br />
-            {petInfo.petBirthMonth}
-            <br />
-            {petInfo.petBirthDay}
-            <br />
-            {petInfo.petGender}
-            <br />
-            {petInfo.petNtlz}
-            <br />
-            {petInfo.petWeightInt}
-            <br />
-            {petInfo.petWeightDeci}
-            <br />
+            <div className="pet-info-box">
+              <div className="pet-name-box">
+                이름 {petInfo.petName}
+              </div>
+              <div className="pet-detail-info">
+                <div className="pet-image-box">
+                  <div className="no-image">
+                    <div className="add-image-btn"></div>
+                  </div>
+                  <img src="assets/petpostimg.jpg" className="pet-image" />
+                </div>
+                <div className="pet-detail">
+                  <div className="pet-gender">
+                    성별 {petInfo.petGender}
+                  </div>
+                  <div className="pet-breed">
+                    견종 {petInfo.petBreed}
+                  </div>
+                  <div className="pet-birth">
+                    생년월일/나이 {petBirth}
+                  </div>
+                  <div className="pet-weight">
+                    몸무게 {petWeight}
+                  </div>
+                  <div className="pet-ntlz">
+                    중성화 수술 여부 {petInfo.petNtlz}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          <div className="check-message">강아지 정보를 확인해 주세요</div>
           <div className="btn-wrapper">
             <MyButton
               text="완료"
